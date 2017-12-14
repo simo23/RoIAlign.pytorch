@@ -21,6 +21,13 @@ See more details about the difference of
 
 
 ## Usage
+
+IMPORTANT: check your GPU's capability and change the -arch flag in line 7 of make.sh accordingly to your specs.
+
+        $CUDA_PATH/bin/nvcc -c -o crop_and_resize_kernel.cu.o crop_and_resize_kernel.cu -x cu -Xcompiler -fPIC -arch=sm_52
+
+E.g. On my laptop I have a Geforce GTX 960M which has capability 5.0 so I changed sm_52 with sm_50 and it worked. 
+
 + Build and test
     ```bash
     chmod a+x make.sh
@@ -45,3 +52,7 @@ See more details about the difference of
     
 + [Issue1](https://github.com/longcw/RoIAlign.pytorch/issues/1): gradcheck 
     and difference of `RoIAlign` and `crop_and_resize`.
+    
+## Example
+
+Check crop_and_resize_example.py to see how crop_and_resize works 
