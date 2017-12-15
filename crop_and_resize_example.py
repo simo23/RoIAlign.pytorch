@@ -16,7 +16,8 @@ crop_height = 50
 crop_width = 50
 is_cuda = True
 
-# In this simple example the number of images and boxes is 2
+# In this simple example the number of images and boxes is 2 
+# Note: their size must be equal in order to be stacked together
 img_path1 = '/path/to/first/img'
 img_path2 = '/path/to/second/img'
 
